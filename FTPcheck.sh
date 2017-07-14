@@ -19,5 +19,5 @@ echo $ip >> open-ftp.txt
 curl -m 6 ftp://$ip --user "anonymous:pass@" | echo $(grep r):$ip >> open-ftp.txt #append IP to output for later grepping
 done < ip.txt
 sleep 2
-#cat ftp.txt | egrep Banner #only show those with easy banners ##	uncomment if you want to see found banners
+#cat ftp.txt | grep Banner #only show those with easy banners ##	uncomment if you want to see found banners
 cat open-ftp.txt | grep r #if we found any, list their directory output
